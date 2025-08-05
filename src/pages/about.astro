@@ -2,12 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Container from '../components/Container.astro';
 import { Image } from 'astro:assets';
+import { siteConfig } from '../config/site.ts';
 import portraitImage from '../assets/portrait.jpg';
 ---
 
 <BaseLayout 
   title="About"
-  description="I'm Spencer Sharp. I live in New York City, where I design the future."
+  description="I'm Dan Louren&ccedil;o, a software engineer passionate about building meaningful digital experiences and sharing insights from my development journey."
 >
   <Container class="mt-16 sm:mt-32">
     <div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -24,20 +25,20 @@ import portraitImage from '../assets/portrait.jpg';
       </div>
       <div class="lg:order-first lg:row-span-2">
         <h1 class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-          I'm Spencer Sharp. I live in New York City, where I design the future.
+          I'm Dan Louren&ccedil;o. I build thoughtful digital experiences that put users first.
         </h1>
         <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
           <p>
-            I've loved making things for as long as I can remember, and wrote my first program when I was 6 years old, just two weeks after my mom brought home the brand new Macintosh LC 550 that I taught myself to type on.
+            My professional journey spans over a decade working with organizations — from scrappy startups to Fortune 500 enterprises — with a focus on creating web applications that improve people's lives. I've led complete platform modernizations for national restaurant chains, built accessible government systems serving millions of citizens, and architected financial tools that help advisors better serve their clients.
           </p>
           <p>
-            The only thing I loved more than computers as a kid was space. When I was 8, I climbed the 40-foot oak tree at the back of our yard while wearing my older sister's motorcycle helmet, counted down from three, and jumped — hoping the tree was tall enough that with just a bit of momentum I'd be able to get to orbit.
+            I approach every project with curiosity about the real problems we're solving and the people who will ultimately use what we build. This perspective, combined with my technical expertise in modern web technologies, accessibility standards, and JavaScript frameworks, allows me to deliver solutions that are both robust and impactful.
           </p>
           <p>
-            I spent the next few summers indoors working on a rocket design, while I recovered from the multiple surgeries it took to fix my badly broken legs. It took nine iterations, but when I was 15 I sent my dad's Blackberry into orbit and was able to transmit a photo back down to our family computer from space.
+            I'm passionate about using technology to create positive social impact and improve people's lives. I believe technology should empower people, not manipulate them for engagement or profit. This philosophy guides everything from my approach to accessibility testing, to my choice of projects and the teams I want to work with.
           </p>
           <p>
-            Today, I'm the founder of Planetaria, where we're working on civilian space suits and manned shuttle kits you can assemble at home so that the next generation of kids really <em>can</em> make it to orbit — from the comfort of their own backyards.
+            Currently, I'm seeking my next chapter with mission-driven teams — particularly in climate tech and sustainability — where thoughtful innovation meets meaningful impact. I want to contribute to solutions that don't just work well technically, but actually make the world a little better.
           </p>
         </div>
       </div>
@@ -116,7 +117,7 @@ import portraitImage from '../assets/portrait.jpg';
           </li>
           <li class="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40 flex">
             <a
-              href="mailto:spencer@planetaria.tech"
+              href={`mailto:${siteConfig.author.email}`}
               class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
             >
               <svg
@@ -137,7 +138,7 @@ import portraitImage from '../assets/portrait.jpg';
                   class="stroke-zinc-400 dark:stroke-zinc-500"
                 />
               </svg>
-              <span class="ml-4">spencer@planetaria.tech</span>
+              <span class="ml-4">{siteConfig.author.email}</span>
             </a>
           </li>
         </ul>

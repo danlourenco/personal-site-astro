@@ -1,5 +1,6 @@
 ---
 import Container from './Container.astro';
+import { siteConfig } from '../config/site.ts';
 ---
 
 <footer class="mt-32 flex-none">
@@ -14,7 +15,7 @@ import Container from './Container.astro';
             <a href="/uses" class="transition hover:text-teal-500 dark:hover:text-teal-400">Uses</a>
           </div>
           <p class="text-sm text-zinc-400 dark:text-zinc-500">
-            &copy; {new Date().getFullYear()} Spencer Sharp. All rights reserved.
+            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
         </div>
       </Container>

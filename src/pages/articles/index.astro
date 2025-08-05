@@ -33,6 +33,9 @@ function formatDate(date: Date) {
         <div class="flex max-w-3xl flex-col space-y-16">
           {sortedArticles.map((article) => (
             <article class="md:grid md:grid-cols-4 md:items-baseline">
+              <time class="mt-1 hidden md:block relative text-sm text-zinc-400 dark:text-zinc-500" datetime={article.data.date.toISOString()}>
+                {formatDate(article.data.date)}
+              </time>
               <div class="md:col-span-3 group relative flex flex-col items-start">
                 <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
                   <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
@@ -55,9 +58,6 @@ function formatDate(date: Date) {
                   </svg>
                 </div>
               </div>
-              <time class="mt-1 max-md:hidden relative text-sm text-zinc-400 dark:text-zinc-500" datetime={article.data.date.toISOString()}>
-                {formatDate(article.data.date)}
-              </time>
             </article>
           ))}
         </div>
