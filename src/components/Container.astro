@@ -1,0 +1,37 @@
+---
+interface Props {
+  class?: string;
+  outer?: boolean;
+  inner?: boolean;
+}
+
+const { class: className = '', outer = false, inner = false } = Astro.props;
+
+// Default behavior is full container (outer + inner)
+const isOuter = outer || (!inner && !outer);
+const isInner = inner || (!inner && !outer);
+---
+
+{isOuter && (
+  <div class={`sm:px-8 ${className}`}>
+    <div class="mx-auto w-full max-w-7xl lg:px-8">
+      {isInner ? (
+        <div class="relative px-4 sm:px-8 lg:px-12">
+          <div class="mx-auto max-w-2xl lg:max-w-5xl">
+            <slot />
+          </div>
+        </div>
+      ) : (
+        <slot />
+      )}
+    </div>
+  </div>
+)}
+
+{!isOuter && isInner && (
+  <div class={`relative px-4 sm:px-8 lg:px-12 ${className}`}>
+    <div class="mx-auto max-w-2xl lg:max-w-5xl">
+      <slot />
+    </div>
+  </div>
+)}

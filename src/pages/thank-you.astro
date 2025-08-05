@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/Container.astro';
+---
+
+<BaseLayout 
+  title="You're subscribed"
+  description="Thanks for subscribing to my newsletter."
+>
+  <Container class="flex h-full items-center pt-16 sm:pt-32">
+    <div class="flex flex-col items-center">
+      <p class="text-base font-semibold text-zinc-400 dark:text-zinc-500">404</p>
+      <h1 class="mt-4 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+        Thanks for subscribing!
+      </h1>
+      <p class="mt-4 text-base text-zinc-600 dark:text-zinc-400">
+        I'll send you an email any time I publish a new blog post, release a new project, or have anything interesting to share that I think you'd enjoy. You can unsubscribe at any time, no hard feelings.
+      </p>
+      <a
+        href="/"
+        class="mt-4 text-sm font-medium text-teal-500 hover:text-teal-600 dark:hover:text-teal-400"
+      >
+        Go back home
+      </a>
+    </div>
+  </Container>
+</BaseLayout>
