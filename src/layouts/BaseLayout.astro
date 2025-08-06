@@ -23,7 +23,8 @@ const pageTitle = getPageTitle(title);
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <title>{pageTitle}</title>
     
     <!-- RSS Feed -->
@@ -36,16 +37,21 @@ const pageTitle = getPageTitle(title);
     
     <!-- Prevent FOUC by initializing theme immediately -->
     <script is:inline>
-      (function() {
+      function applyTheme() {
         if (typeof localStorage !== 'undefined') {
           const theme = localStorage.getItem('theme');
           const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
           
           if (theme === 'dark' || (theme === null && prefersDark)) {
             document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
           }
         }
-      })();
+      }
+      
+      applyTheme();
+      document.addEventListener('astro:after-swap', applyTheme);
     </script>
   </head>
   <body class="flex h-full bg-zinc-50 dark:bg-black">
