@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Container from '../components/Container.astro';
+import Section from '../components/Section.astro';
+import Appearance from '../components/Appearance.astro';
 ---
 
 <BaseLayout 
@@ -18,95 +20,49 @@ import Container from '../components/Container.astro';
     </header>
     <div class="mt-16 sm:mt-20">
       <div class="space-y-20">
-        <article class="md:grid md:grid-cols-4 md:items-baseline">
-          <div class="md:col-span-3 group relative flex flex-col items-start">
-            <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-              <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-              <a href="#">
-                <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-                <span class="relative z-10">In space, no one can watch you stream — until now</span>
-              </a>
-            </h2>
-            <p class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5">
-              <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
-                <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-              </span>
-              SysConf 2021
-            </p>
-            <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-              A technical deep-dive into how we solved the problem of real-time video streaming between Earth and Mars, including a demo of our WebRTC-based communication protocol.
-            </p>
-            <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
-              Watch video
-              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="ml-1 h-4 w-4 stroke-current">
-                <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </div>
+        <Section title="Conferences">
+          <div class="space-y-16">
+            <Appearance
+              href="#"
+              title="In space, no one can watch you stream — until now"
+              description="A technical deep-dive into HelioStream, the real-time streaming library I wrote for transmitting live video back to Earth."
+              event="SysConf 2021"
+              cta="Watch video"
+            />
+            <Appearance
+              href="#"
+              title="Lessons learned from our first product recall"
+              description="They say that if you're not embarassed by your first version, you're doing it wrong. Well when you're selling DIY space shuttle kits it turns out it's a bit more complicated."
+              event="Business of Startups 2020"
+              cta="Watch video"
+            />
           </div>
-          <time class="mt-1 max-md:hidden relative text-sm text-zinc-400 dark:text-zinc-500" datetime="2021-11-15">
-            November 15, 2021
-          </time>
-        </article>
-
-        <article class="md:grid md:grid-cols-4 md:items-baseline">
-          <div class="md:col-span-3 group relative flex flex-col items-start">
-            <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-              <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-              <a href="#">
-                <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-                <span class="relative z-10">Lessons learned from our migration to TypeScript</span>
-              </a>
-            </h2>
-            <p class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5">
-              <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
-                <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-              </span>
-              The Changelog
-            </p>
-            <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-              They say the best tool is the one you know how to use. I had to learn the hard way that sometimes the best tool is the one you don't know how to use yet.
-            </p>
-            <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
-              Listen to podcast
-              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="ml-1 h-4 w-4 stroke-current">
-                <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </div>  
+        </Section>
+        <Section title="Podcasts">
+          <div class="space-y-16">
+            <Appearance
+              href="#"
+              title="Using design as a competitive advantage"
+              description="How we used world-class visual design to attract a great team, win over customers, and get more press for Planetaria."
+              event="Encoding Design, July 2022"
+              cta="Listen to podcast"
+            />
+            <Appearance
+              href="#"
+              title="Bootstrapping an aerospace company to $17M ARR"
+              description="The story of how we built one of the most promising space startups in the world without taking any capital from investors."
+              event="The Escape Velocity Show, March 2022"
+              cta="Listen to podcast"
+            />
+            <Appearance
+              href="#"
+              title="Programming your company operating system"
+              description="On the importance of creating systems and processes for running your business so that everyone on the team knows how to make the right decision no matter the situation."
+              event="How They Work Radio, September 2021"
+              cta="Listen to podcast"
+            />
           </div>
-          <time class="mt-1 max-md:hidden relative text-sm text-zinc-400 dark:text-zinc-500" datetime="2021-09-12">
-            September 12, 2021
-          </time>
-        </article>
-
-        <article class="md:grid md:grid-cols-4 md:items-baseline">
-          <div class="md:col-span-3 group relative flex flex-col items-start">
-            <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-              <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-              <a href="#">
-                <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-                <span class="relative z-10">Using design as a competitive advantage</span>
-              </a>
-            </h2>
-            <p class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5">  
-              <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
-                <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-              </span>
-              Encoding Design
-            </p>
-            <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-              How we used world-class visual design to attract a great team, win over customers, and get more press for Planetaria.
-            </p>
-            <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
-              Listen to podcast
-              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="ml-1 h-4 w-4 stroke-current">
-                <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </div>
-          </div>
-          <time class="mt-1 max-md:hidden relative text-sm text-zinc-400 dark:text-zinc-500" datetime="2021-06-08">
-            June 8, 2021
-          </time>
-        </article>
+        </Section>
       </div>
     </div>
   </Container>

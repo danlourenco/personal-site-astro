@@ -1,0 +1,42 @@
+---
+export interface Props {
+  as?: keyof HTMLElementTagNameMap;
+  class?: string;
+}
+
+const { as: Component = 'div', class: className = '', ...props } = Astro.props;
+---
+
+<Component class={`group relative flex flex-col items-start ${className}`} {...props}>
+  <slot />
+</Component>
+
+<script>
+  // ChevronRightIcon component as a script to be used in Card.Cta
+  function createChevronIcon() {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 16 16');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.classList.add('ml-1', 'h-4', 'w-4', 'stroke-current');
+    
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', 'M6.75 5.75 9.25 8l-2.5 2.25');
+    path.setAttribute('stroke-width', '1.5');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+    
+    svg.appendChild(path);
+    return svg;
+  }
+
+  // Add chevron icons to all CTA elements
+  document.addEventListener('DOMContentLoaded', () => {
+    const ctas = document.querySelectorAll('[data-card-cta]');
+    ctas.forEach(cta => {
+      if (!cta.querySelector('svg')) {
+        cta.appendChild(createChevronIcon());
+      }
+    });
+  });
+</script>
