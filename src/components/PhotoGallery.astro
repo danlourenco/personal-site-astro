@@ -1,59 +1,41 @@
 ---
 import { Image } from 'astro:assets';
+
+interface PhotoConfig {
+  id: string;
+  rotation: 'rotate-2' | '-rotate-2';
+}
+
+interface Props {
+  photos?: PhotoConfig[];
+}
+
+// Default photo configuration matching original order
+const defaultPhotos: PhotoConfig[] = [
+  { id: 'image-3', rotation: 'rotate-2' },
+  { id: 'image-2', rotation: '-rotate-2' },
+  { id: 'image-4', rotation: 'rotate-2' },
+  { id: 'image-1', rotation: '-rotate-2' },
+  // { id: 'image-5', rotation: '-rotate-2' }
+];
+
+const { photos = defaultPhotos } = Astro.props;
 ---
 
 <!-- Photo Gallery -->
 <div class="mt-16 sm:mt-20">
   <div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-    <div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
-      <Image
-        src={import('../images/photos/image-2.jpg')}
-        alt=""
-        width={576}
-        height={640}
-        quality={95}
-        class="absolute inset-0 h-full w-full object-cover object-top"
-      />
-    </div>
-    <div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
-      <Image
-        src={import('../images/photos/image-3.jpg')}
-        alt=""
-        width={576}
-        height={640}
-        quality={95}
-        class="absolute inset-0 h-full w-full object-cover object-top"
-      />
-    </div>
-    <div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
-      <Image
-        src={import('../images/photos/image-4.jpg')}
-        alt=""
-        width={576}
-        height={640}
-        quality={95}
-        class="absolute inset-0 h-full w-full object-cover object-top"
-      />
-    </div>
-    <div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
-      <Image
-        src={import('../images/photos/image-5.jpg')}
-        alt=""
-        width={576}
-        height={640}
-        quality={95}
-        class="absolute inset-0 h-full w-full object-cover object-top"
-      />
-    </div>
-    <div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
-      <Image
-        src={import('../images/photos/image-1.jpg')}
-        alt=""
-        width={576}
-        height={640}
-        quality={95}
-        class="absolute inset-0 h-full w-full object-cover object-top"
-      />
-    </div>
+    {photos.map((photo) => (
+      <div class={`relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 ${photo.rotation}`}>
+        <Image
+          src={import(`../images/photos/${photo.id}.jpg`)}
+          alt=""
+          width={576}
+          height={640}
+          quality={95}
+          class="absolute inset-0 h-full w-full object-cover object-top"
+        />
+      </div>
+    ))}
   </div>
 </div>
