@@ -1,42 +1,90 @@
-# Spotlight
+# Dan Lourenço's Personal Website
 
-Spotlight is a [Tailwind Plus](https://tailwindcss.com/plus) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+This is Dan Lourenço's personal portfolio website, built on the "Spotlight" template originally from [Tailwind Plus](https://tailwindcss.com/plus). The site has been migrated from Next.js to [Astro](https://astro.build) and customized with Dan's content, work history, and personal branding.
 
-## Getting started
+## Tech Stack
 
-To get started with this template, first install the npm dependencies:
+- **[Astro 5.x](https://astro.build)** - Modern static site generator with content collections
+- **[TypeScript](https://www.typescriptlang.org)** - Type-safe development
+- **[Tailwind CSS v4](https://tailwindcss.com)** - Utility-first CSS framework
+- **[MDX](https://mdxjs.com)** - Markdown with React components for blog posts
+- **Content Collections** - Type-safe content management
+
+## Getting Started
+
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Next, create a `.env.local` file in the root of your project and set the `NEXT_PUBLIC_SITE_URL` variable to your site's public URL:
-
-```
-NEXT_PUBLIC_SITE_URL=https://example.com
-```
-
-Next, run the development server:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+Open [http://localhost:4321](http://localhost:4321) in your browser to view the website.
 
-## Customizing
+## Available Scripts
 
-You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build
+npm run astro    # Run Astro CLI commands
+```
 
-## License
+## Project Structure
 
-This site template is a commercial product and is licensed under the [Tailwind Plus license](https://tailwindcss.com/plus/license).
+```
+/
+├── public/           # Static assets (images, icons, etc.)
+├── src/
+│   ├── components/   # Reusable Astro components
+│   ├── config/       # Site configuration and metadata
+│   ├── content/      # Content collections (blog articles)
+│   ├── images/       # Optimized images and assets
+│   ├── layouts/      # Page layout templates
+│   ├── pages/        # File-based routing
+│   └── styles/       # Global CSS and styling
+├── astro.config.mjs  # Astro configuration
+└── CLAUDE.md         # Development guidance for Claude Code
+```
 
-## Learn more
+## Features
 
-To learn more about the technologies used in this site template, see the following resources:
+- 📝 **Content Collections** - Type-safe blog with MDX support
+- 🎨 **Dark/Light Theme** - System preference detection with FOUC prevention
+- 📱 **Responsive Design** - Mobile-first approach with Tailwind CSS
+- 🖼️ **Photo Gallery** - Configurable image gallery with rotation effects
+- 🔗 **Social Media Integration** - Reusable social media components
+- 📊 **RSS Feed** - Automatically generated at `/rss.xml`
+- ⚡ **Performance** - Optimized images and fast loading times
 
-- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
-- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
-- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
-- [MDX](https://mdxjs.com) - the MDX documentation
+## Content Management
+
+Articles are stored in `src/content/articles/` as MDX files with frontmatter:
+
+```yaml
+---
+title: "Article Title"
+description: "Article description"
+author: "Dan Lourenço"
+date: "2024-01-01"
+heroImage: "../../assets/image.jpg"
+---
+```
+
+The site configuration is centralized in `src/config/site.ts` for easy customization.
+
+## Learn More
+
+- [Astro Documentation](https://docs.astro.build) - Learn about Astro's features and API
+- [Tailwind CSS](https://tailwindcss.com/docs) - Utility-first CSS framework
+- [MDX](https://mdxjs.com) - Markdown with components
+- [TypeScript](https://www.typescriptlang.org/docs) - JavaScript with static types
+
+## Original Template
+
+This site is based on the "Spotlight" template from [Tailwind Plus](https://tailwindcss.com/plus), migrated from Next.js to Astro and customized for personal use.
