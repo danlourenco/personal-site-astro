@@ -10,19 +10,22 @@ import Container from '../components/Container.astro';
   <Container class="mt-16 sm:mt-32">
     <header class="max-w-2xl">
       <h1 class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-        Software I use, gadgets I love, and other things I recommend.
+        Hardware, software, and gear that powers my daily workflow.
       </h1>
       <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-        I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I'm being productive when I'm really just procrastinating. Here's a big list of all of my favorite stuff.
+        The tools and gear that help me build software and stay productive.
       </p>
     </header>
     <div class="mt-16 sm:mt-20">
-      <div class="space-y-20">
-        <section aria-labelledby="workstation">
-          <h2 id="workstation" class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-            Workstation
-          </h2>
-          <ol class="mt-6 space-y-4">
+      <div class="flex max-w-3xl flex-col space-y-16">
+        <section class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+          <div class="grid max-w-3xl grid-cols-1 items-baseline gap-y-8 md:grid-cols-4">
+            <div class="md:col-span-1">
+              <h2 id="workstation" class="text-lg font-semibold text-zinc-900 md:text-sm dark:text-zinc-100">
+                Workstation
+              </h2>
+            </div>
+            <ol class="md:col-span-3 space-y-4">
             <li class="group relative flex flex-col items-start">
               <h3 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
                 14" MacBook Pro, M3 Pro, 36GB RAM (2023)
@@ -55,14 +58,26 @@ import Container from '../components/Container.astro';
                 The best mouse I've ever used. The precision scrolling is perfect for long documents and code files, and the side buttons are programmable for common shortcuts. It seamlessly switches between my MacBook and other devices, making multi-device workflows effortless.
               </p>
             </li>
-          </ol>
+            <li class="group relative flex flex-col items-start">
+              <h3 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+                Vari Electric Standing Desk (72x30)
+              </h3>
+              <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                A game-changer for long coding sessions. The 72" width gives me plenty of space for multiple monitors and my laptop setup. Four programmable memory settings make switching between sitting and standing heights effortless, and the quiet motor means no disruption during calls. The Wall Street Journal called it the best standing desk they tested, and I agree.
+              </p>
+            </li>
+            </ol>
+          </div>
         </section>
-        
-        <section aria-labelledby="development-tools">
-          <h2 id="development-tools" class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-            Development tools
-          </h2>
-          <ol class="mt-6 space-y-4">
+          
+        <section class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+          <div class="grid max-w-3xl grid-cols-1 items-baseline gap-y-8 md:grid-cols-4">
+            <div class="md:col-span-1">
+              <h2 id="development-tools" class="text-lg font-semibold text-zinc-900 md:text-sm dark:text-zinc-100">
+                Development tools
+              </h2>
+            </div>
+            <ol class="md:col-span-3 space-y-4">
             <li class="group relative flex flex-col items-start">
               <h3 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
                 VS Code
@@ -79,9 +94,11 @@ import Container from '../components/Container.astro';
                 I've been using iTerm2 for years for its split panes, search, and customization options. Recently started experimenting with Ghostty, a new GPU-accelerated terminal that's incredibly fast and built by the Zig team. The future of terminal emulators looks bright.
               </p>
             </li>
-          </ol>
+            </ol>
+          </div>
         </section>
       </div>
+    </div>
     </div>
   </Container>
 </BaseLayout>

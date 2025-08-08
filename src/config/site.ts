@@ -5,9 +5,12 @@ export const siteConfig = {
   url: "https://www.danlouren.co",
   author: {
     name: "Dan Lourenço",
-    email: "dan@danlouren.co",
-    twitter: "@danlouren",
-    github: "danlouren"
+    email: "dan@thelourencos.com",
+    github: "https://github.com/danlourenco"
+  },
+  socials: {
+    github: "https://github.com/danlourenco",
+    linkedin: "https://linkedin.com/in/danlourenco"
   },
   ogImage: "/og-image.jpg",
 } as const;
