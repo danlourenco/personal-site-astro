@@ -1,7 +1,7 @@
 ---
 import Container from './Container.astro';
 import { Image } from 'astro:assets';
-import avatarImage from '../images/avatar.jpg';
+import avatarImage from '../images/avatar.png';
 
 const pathname = Astro.url.pathname;
 const isHomePage = pathname === '/';
@@ -14,8 +14,8 @@ interface NavItem {
 const navItems: NavItem[] = [
   { href: '/about', label: 'About' },
   { href: '/articles', label: 'Articles' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/speaking', label: 'Speaking' },
+  // { href: '/projects', label: 'Projects' },
+  // { href: '/speaking', label: 'Speaking' },
   { href: '/uses', label: 'Uses' },
 ];
 ---
@@ -28,10 +28,10 @@ const navItems: NavItem[] = [
           <Image
             src={avatarImage}
             alt=""
-            width={128}
-            height={128}
-            quality={90}
-            class="h-16 w-16 rounded-full bg-zinc-100 object-cover dark:bg-zinc-800"
+            width={256}
+            height={256}
+            quality={95}
+            class="h-16 w-16 rounded-full bg-zinc-100 object-cover object-top dark:bg-zinc-800"
           />
         </a>
       </div>
@@ -48,10 +48,10 @@ const navItems: NavItem[] = [
                 <Image
                   src={avatarImage}
                   alt=""
-                  width={72}
-                  height={72}
-                  quality={90}
-                  class="h-9 w-9 rounded-full bg-zinc-100 object-cover dark:bg-zinc-800"
+                  width={144}
+                  height={144}
+                  quality={95}
+                  class="h-9 w-9 rounded-full bg-zinc-100 object-cover object-top dark:bg-zinc-800"
                 />
               </a>
             </div>

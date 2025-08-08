@@ -5,6 +5,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Container from '../components/Container.astro';
 import { siteConfig } from '../config/site.ts';
 
+// Company logos
+import slaromBuildLogo from '../images/logos/slalom_build_logo.jpeg';
+import slaromConsultingLogo from '../images/logos/slalom_consulting_logo.jpeg';
+import mcgrawHillLogo from '../images/logos/mcgraw_hill_education_logo.jpeg';
+import sapientLogo from '../images/logos/sapient_global_markets_logo.jpeg';
+
 // Get the latest 4 articles
 const allArticles = await getCollection('articles');
 const articles = allArticles
@@ -28,7 +34,9 @@ function formatDate(date: Date) {
       </h1>
       <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
         Hey there! I'm Dan Lourenço, a software engineer passionate about building meaningful
-        digital experiences. I write about technology, share insights from
+        digital experiences for the web. 
+        
+        I write about technology, share insights from
         my development journey, and explore the intersection of code and
         creativity.
       </p>
@@ -63,47 +71,52 @@ function formatDate(date: Date) {
     <div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
       <div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
         <Image
-          src={import('../images/photos/image-1.jpg')}
+          src={import('../images/photos/image-2.jpg')}
           alt=""
-          width={288}
-          height={320}
-          class="absolute inset-0 h-full w-full object-cover"
+          width={576}
+          height={640}
+          quality={95}
+          class="absolute inset-0 h-full w-full object-cover object-top"
         />
       </div>
       <div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
         <Image
-          src={import('../images/photos/image-2.jpg')}
-          alt=""
-          width={288}
-          height={320}
-          class="absolute inset-0 h-full w-full object-cover"
-        />
-      </div>
-      <div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
-        <Image
           src={import('../images/photos/image-3.jpg')}
           alt=""
-          width={288}
-          height={320}
-          class="absolute inset-0 h-full w-full object-cover"
+          width={576}
+          height={640}
+          quality={95}
+          class="absolute inset-0 h-full w-full object-cover object-top"
         />
       </div>
       <div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
         <Image
           src={import('../images/photos/image-4.jpg')}
           alt=""
-          width={288}
-          height={320}
-          class="absolute inset-0 h-full w-full object-cover"
+          width={576}
+          height={640}
+          quality={95}
+          class="absolute inset-0 h-full w-full object-cover object-top"
+        />
+      </div>
+      <div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
+        <Image
+          src={import('../images/photos/image-5.jpg')}
+          alt=""
+          width={576}
+          height={640}
+          quality={95}
+          class="absolute inset-0 h-full w-full object-cover object-top"
         />
       </div>
       <div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
         <Image
-          src={import('../images/photos/image-5.jpg')}
+          src={import('../images/photos/image-1.jpg')}
           alt=""
-          width={288}
-          height={320}
-          class="absolute inset-0 h-full w-full object-cover"
+          width={576}
+          height={640}
+          quality={95}
+          class="absolute inset-0 h-full w-full object-cover object-top"
         />
       </div>
     </div>
@@ -152,12 +165,62 @@ function formatDate(date: Date) {
           <ol class="mt-6 space-y-4">
             <li class="flex gap-4">
               <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <img
-                  src="https://s7d9.scene7.com/is/content/slalom/slalom-logo-blue-RGB?fmt=webp-alpha&metadata=none"
+                <Image
+                  src={slaromBuildLogo}
+                  alt="Slalom Build logo"
+                  width={80}
+                  height={80}
+                  class="h-full w-full object-cover rounded-full"
+                />
+              </div>
+              <dl class="flex flex-auto flex-wrap gap-x-2">
+                <dt class="sr-only">Company</dt>
+                <dd class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                  Slalom Build
+                </dd>
+                <dt class="sr-only">Role</dt>
+                <dd class="text-xs text-zinc-500 dark:text-zinc-400">
+                  Solution Architect
+                </dd>
+                <dt class="sr-only">Date</dt>
+                <dd class="ml-auto text-xs text-zinc-400 dark:text-zinc-500" aria-label="2022 until Present">
+                  <time datetime="2022">2022</time> <span aria-hidden="true">—</span> <time datetime="2024">Present</time>
+                </dd>
+              </dl>
+            </li>
+            <li class="flex gap-4">
+              <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                <Image
+                  src={slaromBuildLogo}
+                  alt="Slalom Build logo"
+                  width={80}
+                  height={80}
+                  class="h-full w-full object-cover rounded-full"
+                />
+              </div>
+              <dl class="flex flex-auto flex-wrap gap-x-2">
+                <dt class="sr-only">Company</dt>
+                <dd class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                  Slalom Build
+                </dd>
+                <dt class="sr-only">Role</dt>
+                <dd class="text-xs text-zinc-500 dark:text-zinc-400">
+                  Senior Software Engineer
+                </dd>
+                <dt class="sr-only">Date</dt>
+                <dd class="ml-auto text-xs text-zinc-400 dark:text-zinc-500" aria-label="2019 until 2022">
+                  <time datetime="2019">2019</time> <span aria-hidden="true">—</span> <time datetime="2022">2022</time>
+                </dd>
+              </dl>
+            </li>
+            <li class="flex gap-4">
+              <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                <Image
+                  src={slaromConsultingLogo}
                   alt="Slalom logo"
-                  width="28"
-                  height="28"
-                  class="h-7 w-7 object-contain"
+                  width={80}
+                  height={80}
+                  class="h-full w-full object-cover rounded-full"
                 />
               </div>
               <dl class="flex flex-auto flex-wrap gap-x-2">
@@ -167,62 +230,65 @@ function formatDate(date: Date) {
                 </dd>
                 <dt class="sr-only">Role</dt>
                 <dd class="text-xs text-zinc-500 dark:text-zinc-400">
-                  Solution Architect
+                  Consultant
                 </dd>
                 <dt class="sr-only">Date</dt>
-                <dd class="ml-auto text-xs text-zinc-400 dark:text-zinc-500" aria-label="2016 until Present">
-                  <time datetime="2016">2016</time> <span aria-hidden="true">—</span> <time datetime="2024">Present</time>
+                <dd class="ml-auto text-xs text-zinc-400 dark:text-zinc-500" aria-label="2016 until 2019">
+                  <time datetime="2016">2016</time> <span aria-hidden="true">—</span> <time datetime="2019">2019</time>
+                </dd>
+              </dl>
+            </li>
+            <li class="flex gap-4">
+              <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                <Image
+                  src={mcgrawHillLogo}
+                  alt="McGraw-Hill Education logo"
+                  width={80}
+                  height={80}
+                  class="h-full w-full object-cover rounded-full"
+                />
+              </div>
+              <dl class="flex flex-auto flex-wrap gap-x-2">
+                <dt class="sr-only">Company</dt>
+                <dd class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                  McGraw-Hill Education
+                </dd>
+                <dt class="sr-only">Role</dt>
+                <dd class="text-xs text-zinc-500 dark:text-zinc-400">
+                  Senior UI Engineer
+                </dd>
+                <dt class="sr-only">Date</dt>
+                <dd class="ml-auto text-xs text-zinc-400 dark:text-zinc-500" aria-label="2015 until 2016">
+                  <time datetime="2015">2015</time> <span aria-hidden="true">—</span> <time datetime="2016">2016</time>
+                </dd>
+              </dl>
+            </li>
+            <li class="flex gap-4">
+              <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                <Image
+                  src={sapientLogo}
+                  alt="Sapient Global Markets logo"
+                  width={80}
+                  height={80}
+                  class="h-full w-full object-cover rounded-full"
+                />
+              </div>
+              <dl class="flex flex-auto flex-wrap gap-x-2">
+                <dt class="sr-only">Company</dt>
+                <dd class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                  Sapient Global Markets
+                </dd>
+                <dt class="sr-only">Role</dt>
+                <dd class="text-xs text-zinc-500 dark:text-zinc-400">
+                  Senior Interactive Developer
+                </dd>
+                <dt class="sr-only">Date</dt>
+                <dd class="ml-auto text-xs text-zinc-400 dark:text-zinc-500" aria-label="2013 until 2015">
+                  <time datetime="2013">2013</time> <span aria-hidden="true">—</span> <time datetime="2015">2015</time>
                 </dd>
               </dl>
             </li>
           </ol>
-          
-          <!-- Client Engagements -->
-          <div class="mt-8">
-            <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-4">Recent Client Engagements</h3>
-            <ul class="space-y-3">
-              <li class="flex items-center gap-3 text-sm">
-                <Image
-                  src={import('../images/logos/starbucks.svg')}
-                  alt=""
-                  width={28}
-                  height={28}
-                  class="h-7 w-7 flex-none"
-                />
-                <span class="text-zinc-600 dark:text-zinc-400">Major American Bank: Frontend architecture & tech leadership</span>
-              </li>
-              <li class="flex items-center gap-3 text-sm">
-                <Image
-                  src={import('../images/logos/facebook.svg')}
-                  alt=""
-                  width={28}
-                  height={28}
-                  class="h-7 w-7 flex-none"
-                />
-                <span class="text-zinc-600 dark:text-zinc-400">Global Athletic Apparel Company: Founding frontend engineer</span>
-              </li>
-              <li class="flex items-center gap-3 text-sm">
-                <Image
-                  src={import('../images/logos/airbnb.svg')}
-                  alt=""
-                  width={28}
-                  height={28}
-                  class="h-7 w-7 flex-none"
-                />
-                <span class="text-zinc-600 dark:text-zinc-400">Fortune 500 Financial Services: UI team leadership</span>
-              </li>
-              <li class="flex items-center gap-3 text-sm">
-                <Image
-                  src={import('../images/logos/cosmos.svg')}
-                  alt=""
-                  width={28}
-                  height={28}
-                  class="h-7 w-7 flex-none"
-                />
-                <span class="text-zinc-600 dark:text-zinc-400">Federal Agency: Senior frontend development</span>
-              </li>
-            </ul>
-          </div>
           <button type="button" class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full">
             Download CV
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50">
