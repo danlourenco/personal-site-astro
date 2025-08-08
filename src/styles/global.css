@@ -55,6 +55,29 @@ html.dark {
   scrollbar-color: rgb(45 212 191) rgb(24 24 27); /* thumb, track for dark mode */
 }
 
+/* View Transitions for portrait image */
+::view-transition-old(portrait-image) {
+  animation: slide-out-right 0.3s ease-out;
+}
+
+::view-transition-new(portrait-image) {
+  animation: slide-in-right 0.5s ease-out;
+}
+
+@keyframes slide-out-right {
+  to {
+    transform: translateX(2rem);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(2rem);
+    opacity: 0;
+  }
+}
+
 @theme {
   --text-xs: 0.8125rem;
   --text-xs--line-height: 1.5rem;

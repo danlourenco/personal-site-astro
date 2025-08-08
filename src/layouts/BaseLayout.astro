@@ -51,10 +51,13 @@ const pageTitle = getPageTitle(title);
         }
       }
       
+      // Apply theme immediately on initial load
       applyTheme();
+      
+      // Re-apply theme after View Transitions
       document.addEventListener('astro:after-swap', applyTheme);
     </script>
-    <!-- <ClientRouter /> -->
+    <ClientRouter />
   </head>
   <body class="flex h-full bg-zinc-50 dark:bg-black">
     <div class="flex w-full">
