@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 
 export async function GET(context) {
   const articles = await getCollection('articles');
-  const sortedArticles = articles.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  const sortedArticles = articles
+    .filter((article) => !article.data.draft)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
   return rss({
     title: 'Spencer Sharp',

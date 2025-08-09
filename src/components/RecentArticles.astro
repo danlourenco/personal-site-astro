@@ -1,9 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 
-// Get the latest 4 articles
+// Get the latest 4 published articles
 const allArticles = await getCollection('articles');
 const articles = allArticles
+  .filter((article) => !article.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 4);
 
