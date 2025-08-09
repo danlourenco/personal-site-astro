@@ -24,7 +24,7 @@ export const projects: Project[] = [
    {
     id: 'bluesky-guide',
     title: 'Bluesky Guide',
-    description: 'An exploration of ATProtocol and Bluesky, exploring the API via a retro Prevue Channel interface.',
+    description: 'Experimenting with ATProtocol and Bluesky APIs through a retro Prevue Channel interface. A fun fusion of nostalgia and modern tech.',
     href: 'https://bsky-guide.nuxt.dev',
     linkText: 'bsky-guide.nuxt.dev',
     linkType: 'website',
