@@ -112,6 +112,39 @@ Based on recent commits, the following enhancements have been made:
 - **Work History**: Reflects current Slalom consulting role
 - **Blog Content**: Added Dan's blog posts and updated site branding
 
+## Commit Message Convention
+
+**IMPORTANT**: Use [Conventional Commits](https://www.conventionalcommits.org/) format for all commits:
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+### Types:
+- `feat`: A new feature
+- `fix`: A bug fix
+- `docs`: Documentation only changes
+- `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- `refactor`: A code change that neither fixes a bug nor adds a feature
+- `perf`: A code change that improves performance
+- `test`: Adding missing tests or correcting existing tests
+- `build`: Changes that affect the build system or external dependencies
+- `ci`: Changes to CI configuration files and scripts
+- `chore`: Other changes that don't modify src or test files
+- `revert`: Reverts a previous commit
+
+### Examples:
+```
+feat(navigation): add mobile navigation menu
+fix(safari): resolve portrait image flash during view transitions
+docs(readme): update installation instructions
+style(header): improve code formatting and spacing
+```
+
 ## TypeScript Configuration
 - Strict mode enabled with `strictNullChecks: true`
 - `allowJs: true` for content collections
