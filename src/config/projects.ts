@@ -1,3 +1,6 @@
+import type { ImageMetadata } from 'astro';
+import momaScreenshot from '../images/projects/moma.jpg';
+
 export interface Project {
   id: string;
   title: string;
@@ -5,7 +8,7 @@ export interface Project {
   href?: string;
   linkText?: string;
   linkType?: 'website' | 'github';
-  screenshot?: string; // Optional path to project screenshot
+  screenshot?: ImageMetadata; // Optional imported image
 }
 
 export const projects: Project[] = [
@@ -16,7 +19,7 @@ export const projects: Project[] = [
     href: 'https://moma-boston.netlify.app',
     linkText: 'moma-boston.netlify.app',
     linkType: 'website',
-    screenshot: '../images/projects/moma.jpg'
+    screenshot: momaScreenshot
   },
   // {
   //   id: 'animaginary',

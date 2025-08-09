@@ -13,7 +13,7 @@ const { project } = Astro.props;
   {project.screenshot && (
     <div class="relative z-10 w-full mb-6">
       <Image
-        src={import(project.screenshot)}
+        src={project.screenshot}
         alt={`${project.title} screenshot`}
         width={400}
         height={300}

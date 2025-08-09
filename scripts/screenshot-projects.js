@@ -94,8 +94,27 @@ async function updateProjectConfig(projectId, screenshotPath) {
   const configPath = path.join(__dirname, '../src/config/projects.ts');
   let configContent = await fs.readFile(configPath, 'utf-8');
   
-  // Find the project and add screenshot path if it doesn't exist
-  const relativePath = `../images/projects/${projectId}.jpg`;
+  const importVariableName = `${projectId}Screenshot`;
+  const importPath = `../images/projects/${projectId}.jpg`;
+  
+  // Check if import already exists
+  if (!configContent.includes(`import ${importVariableName} from '${importPath}';`)) {
+    // Add the import statement after existing imports
+    const importLineRegex = /(import.*from.*;
+)/g;
+    const imports = configContent.match(importLineRegex) || [];
+    const lastImport = imports[imports.length - 1];
+    
+    if (lastImport) {
+      const newImport = `import ${importVariableName} from '${importPath}';\n`;
+      configContent = configContent.replace(lastImport, lastImport + newImport);
+    } else {
+      // If no existing imports, add after the ImageMetadata import
+      const typeImport = "import type { ImageMetadata } from 'astro';\n";
+      const newImport = `import ${importVariableName} from '${importPath}';\n`;
+      configContent = configContent.replace(typeImport, typeImport + newImport);
+    }
+  }
   
   // Look for the project by id and see if it already has a screenshot
   const projectRegex = new RegExp(
@@ -109,11 +128,11 @@ async function updateProjectConfig(projectId, screenshotPath) {
     
     // Check if screenshot already exists
     if (!afterLinkType.includes('screenshot:')) {
-      const updatedProject = `${beforeScreenshot},\n    screenshot: '${relativePath}'${afterLinkType}}`;
+      const updatedProject = `${beforeScreenshot},\n    screenshot: ${importVariableName}${afterLinkType}}`;
       configContent = configContent.replace(fullMatch, updatedProject);
       
       await fs.writeFile(configPath, configContent);
-      console.log(`📝 Updated config for ${projectId} with screenshot path`);
+      console.log(`📝 Updated config for ${projectId} with screenshot import`);
     }
   }
 }
