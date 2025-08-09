@@ -9,6 +9,7 @@ export interface Project {
   linkText?: string;
   linkType?: 'website' | 'github';
   screenshot?: ImageMetadata; // Optional imported image
+  technologies?: string[]; // Optional array of tech tags
 }
 
 export const projects: Project[] = [
@@ -19,15 +20,17 @@ export const projects: Project[] = [
     href: 'https://moma-boston.netlify.app',
     linkText: 'moma-boston.netlify.app',
     linkType: 'website',
-    screenshot: momaScreenshot
+    screenshot: momaScreenshot,
+    technologies: ['Vue 3', 'Nuxt 3', 'TypeScript', 'Tailwind CSS', 'FormKit', 'OpenAI API', 'Eleven Labs']
   },
-   {
+  {
     id: 'bluesky-guide',
     title: 'Bluesky Guide',
     description: 'Experimenting with ATProtocol and Bluesky APIs through a retro Prevue Channel interface. A fun fusion of nostalgia and modern tech.',
     href: 'https://bsky-guide.nuxt.dev',
     linkText: 'bsky-guide.nuxt.dev',
     linkType: 'website',
-    screenshot: blueskyGuideScreenshot
+    screenshot: blueskyGuideScreenshot,
+    technologies: ['Vue 3', 'Nuxt 3', 'ATProtocol', 'TypeScript', 'CSS3']
   },
 ];
