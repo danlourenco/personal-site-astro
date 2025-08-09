@@ -5,6 +5,11 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Mobile Navigation Details Element */
+details[open] .hidden {
+  display: block !important;
+}
+
 /* Prevent layout shift from scrollbars */
 html {
   scrollbar-gutter: stable;
