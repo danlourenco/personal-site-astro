@@ -1,6 +1,7 @@
 import type { ImageMetadata } from 'astro';
 import momaScreenshot from '../images/projects/moma.jpg';
 import blueskyGuideScreenshot from '../images/projects/bsky-guide.png';
+import personalSiteScreenshot from '../images/projects/personal-site.png';
 export interface Project {
   id: string;
   title: string;
@@ -32,5 +33,15 @@ export const projects: Project[] = [
     linkType: 'website',
     screenshot: blueskyGuideScreenshot,
     technologies: ['Vue 3', 'Nuxt 3', 'ATProtocol', 'TypeScript', 'CSS3']
+  },
+   {
+    id: 'personal-site-astro',
+    title: 'This Here Site (How Meta!)',
+    description: 'My personal website built with Astro, showcasing my projects and blog posts.',
+    href: 'https://www.danlouren.co',
+    linkText: 'www.danlouren.co ',
+    linkType: 'website',
+    screenshot: personalSiteScreenshot,
+    technologies: ['Astro 5', 'TypeScript', 'Tailwind CSS v4', 'MDX', 'Playwright', 'Cloudflare', 'Claude Code']
   },
 ];
