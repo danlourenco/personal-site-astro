@@ -168,3 +168,27 @@ style(header): improve code formatting and spacing
 - Path aliases: `@/*` maps to `./src/*`
 - Astro global types enabled
 - Content collections provide full type safety
+
+## Future Timeline Enhancement Ideas
+
+The work experience timeline (Timeline.astro component) currently displays highlights as large text blocks. Consider these formatting improvements for better visual hierarchy:
+
+### Implementation Options:
+1. **Definition List Format** (current preference):
+   ```
+   **Client:** Major American Bank
+   **Role:** Tech Lead
+   **Impact:** Streamlined self-service workflows
+   **Technologies:** AWS Lambda, DynamoDB, React
+   ```
+
+2. **Subheading Structure**: Use proper H3/H4 headings for each project highlight
+3. **Card Layout**: Each highlight as a visually distinct card with structured sections
+4. **Shorter Paragraphs**: Break long descriptions into 2-3 sentence chunks
+5. **Enhanced Typography**: Bold metrics, italicized technologies, numbered processes
+
+### Benefits:
+- Reduces visual density of large text blocks
+- Improves scanability for recruiters/clients
+- Creates consistent structure across all timeline entries
+- Maintains professional appearance while enhancing readability

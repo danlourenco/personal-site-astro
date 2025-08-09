@@ -58,8 +58,75 @@ const { entries } = Astro.props;
             </p>
             
             {/* Description */}
-            <div class="mt-2 text-sm text-zinc-600 dark:text-zinc-400 whitespace-pre-line">
-              {entry.description}
+            <div class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+              {(() => {
+                const parts = entry.description.split('Highlights include:');
+                const mainDescription = parts[0].trim();
+                const highlights = parts[1]?.trim();
+                
+                return (
+                  <>
+                    <p class="whitespace-pre-line">{mainDescription}</p>
+                    {highlights && (
+                      <div class="mt-4">
+                        <h4 class="text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-3">Key Projects</h4>
+                        <div class="space-y-6">
+                          {(() => {
+                            // Define structured project data for cleaner presentation
+                            const projectData = {
+                              'Software Architect': {
+                                'Major American Bank': {
+                                  role: 'Technical Lead & Engineering Manager',
+                                  impact: 'Streamlined financial advisor workflows, reducing approval time and improving client service efficiency',
+                                  technologies: 'AWS Lambda, DynamoDB, Agile/Scrum methodologies'
+                                },
+                                'National Restaurant Chain': {
+                                  role: 'Lead Developer & Performance Architect', 
+                                  impact: 'Delivered 50% page load improvement across hundreds of locations, enhancing customer experience and operational efficiency',
+                                  technologies: 'Nuxt 3, MapLibre, Radar.com, Image optimization'
+                                }
+                              },
+                              'Senior Software Engineer': {
+                                'Fortune 500 Financial Services Firm': {
+                                  role: 'Frontend Team Lead & Mentor',
+                                  impact: 'Improved development team productivity and code quality through mentorship and standardized practices',
+                                  technologies: 'React, Snowplow, CLI tools, Testing frameworks'
+                                },
+                                'Federal Agency': {
+                                  role: 'Accessibility-focused Frontend Developer',
+                                  impact: 'Enabled faster benefits processing for millions of citizens through accessible, compliant UI components', 
+                                  technologies: 'Micro-frontends, Federal accessibility standards, Case verification systems'
+                                }
+                              },
+                              'Consultant': {
+                                'Global Athletic Apparel Company': {
+                                  role: 'Founding Frontend Engineer & Platform Architect',
+                                  impact: 'Launched successful e-commerce platform generating $300K+ revenue in initial campaigns',
+                                  technologies: 'JavaScript, E-commerce integration, Campaign management systems'
+                                }
+                              }
+                            };
+
+                            const currentPosition = entry.position;
+                            const projects = projectData[currentPosition] || {};
+                            
+                            return Object.entries(projects).map(([client, data], i) => (
+                              <div key={i} class="pl-4">
+                                <h5 class="font-medium text-zinc-800 dark:text-zinc-200 mb-2">{client}</h5>
+                                <div class="mb-2 text-xs space-y-1">
+                                  <p><span class="font-medium text-zinc-700 dark:text-zinc-300">Role:</span> {data.role}</p>
+                                  <p><span class="font-medium text-zinc-700 dark:text-zinc-300">Impact:</span> {data.impact}</p>
+                                  <p><span class="font-medium text-zinc-700 dark:text-zinc-300">Technologies:</span> {data.technologies}</p>
+                                </div>
+                              </div>
+                            ));
+                          })()}
+                        </div>
+                      </div>
+                    )}
+                  </>
+                );
+              })()}
             </div>
           </div>
         </div>
