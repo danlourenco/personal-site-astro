@@ -1,6 +1,6 @@
 import type { ImageMetadata } from 'astro';
 import momaScreenshot from '../images/projects/moma.jpg';
-
+import blueskyGuideScreenshot from '../images/projects/bsky-guide.png';
 export interface Project {
   id: string;
   title: string;
@@ -21,20 +21,13 @@ export const projects: Project[] = [
     linkType: 'website',
     screenshot: momaScreenshot
   },
-  // {
-  //   id: 'animaginary',
-  //   title: 'Animaginary',
-  //   description: 'High performance web animation library built from the ground up with WebAssembly. Capable of 60fps animations even on lower-end devices.',
-  //   href: '#',
-  //   linkText: 'github.com',
-  //   linkType: 'github'
-  // },
-  // {
-  //   id: 'heliostream',
-  //   title: 'HelioStream',
-  //   description: 'Real-time video streaming library optimized for low-latency communication in space. Built for our ground control to spacecraft communication systems.',
-  //   href: '#',
-  //   linkText: 'heliostream.com',
-  //   linkType: 'website'
-  // }
+   {
+    id: 'bluesky-guide',
+    title: 'Bluesky Guide',
+    description: 'An exploration of ATProtocol and Bluesky, exploring the API via a retro Prevue Channel interface.',
+    href: 'https://bsky-guide.nuxt.dev',
+    linkText: 'bsky-guide.nuxt.dev',
+    linkType: 'website',
+    screenshot: blueskyGuideScreenshot
+  },
 ];
