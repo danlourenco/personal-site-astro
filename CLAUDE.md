@@ -56,6 +56,8 @@ The site is configured for Dan Lourenço's domain:
 - `PhotoGallery.astro`: Configurable photo gallery with rotation effects and image ordering
 - `SocialMediaIcons.astro` / `SocialMediaList.astro`: Reusable social media components
 - `ThemeToggle.astro`: Dark/light mode toggle with system preference detection
+- `Timeline.astro`: Work experience timeline with company logos and detailed descriptions
+- `ProjectCard.astro`: Reusable project card component with icon, description, and links
 - Header/Footer components converted to `.astro` format
 
 ### Content Management
@@ -64,6 +66,8 @@ The site is configured for Dan Lourenço's domain:
 - **Dynamic Routing**: `src/pages/articles/[...slug].astro` handles article rendering
 - **Collection API**: Use `getCollection('articles')` to query all articles
 - **RSS Feed**: Generated at `/rss.xml` using `@astrojs/rss`
+- **Projects Config**: Centralized project data in `src/config/projects.ts` with TypeScript interface
+- **Reusable Components**: ProjectCard component renders projects from config data
 
 ### Content Schema
 Articles use this frontmatter structure:
@@ -75,6 +79,19 @@ author: "Author Name"
 date: "2023-01-01"
 heroImage: "../../assets/image.jpg" # Optional
 ---
+```
+
+Projects are managed via TypeScript interface in `src/config/projects.ts`:
+```typescript
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  href?: string;
+  linkText?: string;
+  linkType?: 'website' | 'github';
+  screenshot?: string; // Optional path to project screenshot
+}
 ```
 
 ### Styling Conventions
