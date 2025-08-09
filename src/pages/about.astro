@@ -2,9 +2,59 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Container from '../components/Container.astro';
 import SocialMediaList from '../components/SocialMediaList.astro';
+import Timeline from '../components/Timeline.astro';
 import { Image } from 'astro:assets';
 import { siteConfig } from '../config/site.ts';
 import portraitImage from '../assets/portrait.jpg';
+
+// Import company logos
+import slalomBuildLogo from '../images/logos/slalom_build_logo.jpeg';
+import slalomConsultingLogo from '../images/logos/slalom_consulting_logo.jpeg';
+import mcgrawHillLogo from '../images/logos/mcgraw_hill_education_logo.jpeg';
+import sapientLogo from '../images/logos/sapient_global_markets_logo.jpeg';
+
+const workExperience = [
+  {
+    company: 'Slalom Build',
+    position: 'Software Architect',
+    startDate: 'January 2022',
+    endDate: 'Present',
+    logo: slalomBuildLogo,
+    description: 'Lead technical architecture decisions and guide engineering teams on complex modernization projects. Design scalable solutions for enterprise clients while mentoring senior developers and establishing technical standards.\n\nHighlights include:\n• Major American Bank: Served as tech lead on a financial instrument approval platform, working closely with cross-functional teams across AWS infrastructure (Lambda, DynamoDB). Led agile ceremonies and sprint planning while mentoring junior developers through complex enterprise requirements. Navigated client relationships and team transitions during a critical modernization effort that streamlined self-service workflows for financial advisors.\n\n• National Restaurant Chain: Led the complete digital modernization of a major restaurant chain\'s storefront using Nuxt 3. Drove cost optimization by migrating from Google Maps to MapLibre and Radar.com, and implemented comprehensive image optimization that reduced page weight by over 50%. Focused on performance improvements that directly impacted user experience across hundreds of locations.'
+  },
+  {
+    company: 'Slalom Build',
+    position: 'Senior Software Engineer',
+    startDate: 'May 2019',
+    endDate: 'January 2022',
+    logo: slalomBuildLogo,
+    description: 'Built modern web applications using React, Node.js, and cloud technologies. Led frontend development on platform modernization projects for Fortune 500 clients, focusing on accessibility and performance.\n\nHighlights include:\n• Fortune 500 Financial Services Firm: Led the UI team developing a modern React-based advisor workstation. Built Snowplow logging middleware and created CLI tools to streamline third-party integrations. Mentored junior developers through their first React projects while establishing testing practices that improved code quality across the team.\n\n• Federal Agency: Led accessible micro-frontend development for a public benefits verification platform serving millions of applications. Conducted modernization discovery and contributed significantly to case verification UI components. Worked within federal accessibility standards to ensure the platform could expedite benefits processing for citizens nationwide.'
+  },
+  {
+    company: 'Slalom',
+    position: 'Consultant',
+    startDate: 'October 2016',
+    endDate: 'April 2019',
+    logo: slalomConsultingLogo,
+    description: 'Delivered full-stack solutions for enterprise clients across various industries. Collaborated with stakeholders to translate business requirements into technical solutions using modern JavaScript frameworks.\n\nHighlights include:\n• Global Athletic Apparel Company: Selected as one of two founding front-end engineers to architect a new e-commerce platform for custom sneaker campaigns. Built three integrated experiences: public storefront, admin dashboard, and campaign builder for influencers and creators. Reverse-engineered the existing checkout system to support custom product flows. The platform launched successfully with two pop-up campaigns generating over $300,000 in revenue.'
+  },
+  {
+    company: 'McGraw-Hill Education',
+    position: 'Senior UI Engineer',
+    startDate: 'August 2015',
+    endDate: 'October 2016',
+    logo: mcgrawHillLogo,
+    description: 'Developed interactive educational platforms serving millions of students. Built responsive, accessible user interfaces using React and modern CSS, ensuring cross-browser compatibility and optimal performance.'
+  },
+  {
+    company: 'Sapient Global Markets',
+    position: 'Senior Interactive Developer',
+    startDate: 'April 2013',
+    endDate: 'August 2015',
+    logo: sapientLogo,
+    description: 'Built high-performance financial trading platforms and data visualization tools for investment banks and trading firms. Developed complex real-time interfaces using JavaScript and emerging web technologies, focusing on performance optimization for mission-critical applications.'
+  }
+];
 ---
 
 <BaseLayout 
@@ -47,6 +97,11 @@ import portraitImage from '../assets/portrait.jpg';
       <div class="lg:pl-20">
         <SocialMediaList />
       </div>
+    </div>
+    
+    {/* Work Experience Timeline */}
+    <div class="mt-24 sm:mt-32">
+      <Timeline entries={workExperience} />
     </div>
   </Container>
 </BaseLayout>
