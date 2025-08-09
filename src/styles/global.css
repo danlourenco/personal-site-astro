@@ -37,12 +37,12 @@ html {
 
 /* Dark mode scrollbar */
 .dark ::-webkit-scrollbar-track {
-  background: rgb(24 24 27); /* zinc-900 - dark mode content background */
+  background: rgb(30 41 59); /* slate-800 - dark mode content background */
 }
 
 .dark ::-webkit-scrollbar-thumb {
   background: rgb(45 212 191); /* teal-400 - dark mode accent */
-  border: 3px solid rgb(24 24 27); /* zinc-900 - creates padding effect */
+  border: 3px solid rgb(30 41 59); /* slate-800 - creates padding effect */
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
@@ -57,7 +57,7 @@ html {
 
 /* Dark mode - target html.dark specifically */
 html.dark {
-  scrollbar-color: rgb(45 212 191) rgb(24 24 27); /* thumb, track for dark mode */
+  scrollbar-color: rgb(45 212 191) rgb(30 41 59); /* thumb, track for dark mode */
 }
 
 /* View Transitions for portrait image */

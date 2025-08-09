@@ -26,7 +26,7 @@ const { photos = defaultPhotos } = Astro.props;
 <div class="mt-16 sm:mt-20">
   <div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
     {photos.map((photo) => (
-      <div class={`relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 ${photo.rotation}`}>
+      <div class={`relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-slate-700 ${photo.rotation}`}>
         <Image
           src={import(`../images/photos/${photo.id}.jpg`)}
           alt=""

@@ -32,7 +32,7 @@ const navItems: NavItem[] = [
             width={256}
             height={256}
             quality={95}
-            class="h-16 w-16 rounded-full bg-zinc-100 object-cover object-top dark:bg-zinc-800"
+            class="h-16 w-16 rounded-full bg-zinc-100 object-cover object-top dark:bg-slate-700"
           />
         </a>
       </div>
@@ -44,7 +44,7 @@ const navItems: NavItem[] = [
       <div class="relative flex gap-4">
         <div class="flex flex-1">
           {!isHomePage && (
-            <div class="h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:ring-white/10">
+            <div class="h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-slate-700/90 dark:ring-white/10">
               <a href="/" aria-label="Home" class="pointer-events-auto">
                 <Image
                   src={avatarImage}
@@ -52,7 +52,7 @@ const navItems: NavItem[] = [
                   width={144}
                   height={144}
                   quality={95}
-                  class="h-9 w-9 rounded-full bg-zinc-100 object-cover object-top dark:bg-zinc-800"
+                  class="h-9 w-9 rounded-full bg-zinc-100 object-cover object-top dark:bg-slate-700"
                 />
               </a>
             </div>
@@ -62,7 +62,7 @@ const navItems: NavItem[] = [
         <div class="flex flex-1 justify-end md:justify-center">
           <!-- Desktop Navigation -->
           <nav class="pointer-events-auto hidden md:block">
-            <ul class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+            <ul class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-slate-700/90 dark:text-zinc-200 dark:ring-white/10">
               {navItems.map((item) => (
                 <li>
                   <a
@@ -86,7 +86,7 @@ const navItems: NavItem[] = [
           <!-- Mobile Navigation -->
           <nav class="pointer-events-auto md:hidden">
             <details class="relative">
-              <summary class="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20 cursor-pointer">
+              <summary class="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-slate-700/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20 cursor-pointer">
                 Menu
                 <svg class="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" viewBox="0 0 8 6" aria-hidden="true">
                   <path d="M1.75 1.75 4 4.25l2.25-2.5" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -96,7 +96,7 @@ const navItems: NavItem[] = [
               <div class="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm dark:bg-black/80 hidden"></div>
               
               <!-- Mobile Navigation Panel -->
-              <div class="fixed inset-x-4 top-8 z-50 rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800 hidden">
+              <div class="fixed inset-x-4 top-8 z-50 rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-slate-800 dark:ring-zinc-800 hidden">
                 <div class="flex flex-row-reverse items-center justify-between">
                   <!-- Close Button -->
                   <button class="-m-1 p-1" onclick="this.closest('details').open = false" aria-label="Close menu">
