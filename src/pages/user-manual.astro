@@ -11,25 +11,7 @@ import TocEntry from '../components/TocEntry.astro';
   <!-- Import fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   
-  <div class="min-h-screen bg-white dark:bg-zinc-900" style="font-family: 'Libre Baskerville', serif;">
-    <!-- Header Section - GE Style -->
-    <div class="border-b-4 border-black dark:border-white pt-8 pb-4">
-      <Container>
-        <div class="flex items-center justify-between">
-          <!-- GE Logo Style Circle -->
-          <div class="w-20 h-20 border-4 border-black dark:border-white rounded-full flex items-center justify-center">
-            <span class="text-2xl font-bold dark:text-white" style="font-family: 'Dancing Script', cursive;">DL</span>
-          </div>
-          
-          <!-- Website URL -->
-          <div class="text-right">
-            <p class="text-lg font-bold italic dark:text-white" style="font-family: 'Libre Baskerville', serif;">www.danlouren.co</p>
-          </div>
-        </div>
-      </Container>
-    </div>
-
-    <Container class="py-8">
+  <Container class="mt-16 sm:mt-32" style="font-family: 'Libre Baskerville', serif;">
       <div class="grid gap-20" style="grid-template-columns: 120px 1fr 1fr;">
         
         <!-- Vertical Text Column -->
@@ -47,11 +29,10 @@ import TocEntry from '../components/TocEntry.astro';
 
           <!-- Manual Header Box -->
           <div class="border-2 border-black dark:border-white p-4 bg-gray-100 dark:bg-zinc-800">
-            <h2 class="text-lg font-bold text-center dark:text-white" style="font-family: 'Libre Baskerville', serif;">Owner's Manual</h2>
-            <h3 class="text-base font-bold text-center dark:text-white" style="font-family: 'Libre Baskerville', serif;">and Installation</h3>
-            <h3 class="text-base font-bold text-center dark:text-white" style="font-family: 'Libre Baskerville', serif;">Instructions</h3>
+            <h2 class="text-lg font-bold text-center dark:text-white" style="font-family: 'Libre Baskerville', serif;">Personal User Manual and Operating Instructions</h2>
+      
             <div class="mt-2 text-center">
-              <p class="font-bold text-sm dark:text-white" style="font-family: 'Libre Baskerville', serif;">WPGT9350</p>
+              <p class="font-bold text-sm dark:text-white" style="font-family: 'Libre Baskerville', serif;">DBL2025</p>
             </div>
           </div>
 
@@ -69,16 +50,28 @@ import TocEntry from '../components/TocEntry.astro';
             </div>
 
             <div class="pb-1">
+              <h3 class="text-base font-bold dark:text-white mb-2" style="font-family: 'Libre Baskerville', serif; font-style: italic;">Installation Instructions</h3>
+              <div class="space-y-1 text-sm pl-0" style="font-family: 'Libre Baskerville', serif;">
+                <TocEntry title="Before You Begin" pageNumber="19-21" className="text-sm" />
+                <TocEntry title="Team Integration" pageNumber="21-24" className="text-sm" />
+                <!-- <div class="dark:text-gray-300">
+                  <span>Setting Up Remote and</span>
+                </div>
+                <TocEntry title="Office Environments" pageNumber="25-28" className="text-sm ml-4" /> -->
+              </div>
+            </div>
+
+            <div class="pb-1">
               <h3 class="text-base font-bold dark:text-white mb-2" style="font-family: 'Libre Baskerville', serif; font-style: italic;">Operating Instructions</h3>
               <div class="space-y-1 text-sm pl-0" style="font-family: 'Libre Baskerville', serif;">
-                <TocEntry title="Controls" pageNumber="4" className="text-sm" />
+                <!-- <TocEntry title="Controls" pageNumber="4" className="text-sm" /> -->
                 <TocEntry title="Communication Modes" pageNumber="6" className="text-sm" />
                 <TocEntry title="Energy Settings" pageNumber="13, 14" className="text-sm" />
-                <TocEntry title="Troubleshooter" pageNumber="13" className="text-sm" />
-                <div class="dark:text-gray-300">
+                <!-- <TocEntry title="Troubleshooter" pageNumber="13" className="text-sm" /> -->
+                <!-- <div class="dark:text-gray-300">
                   <span>Loading and Using</span>
-                </div>
-                <TocEntry title="Coffee Mode" pageNumber="17, 18" className="text-sm ml-4" />
+                </div> -->
+                <TocEntry title="Coffee Mode" pageNumber="17, 18" className="text-sm " />
                 <TocEntry title='"Deep Work" Feature' pageNumber="11, 12" className="text-sm" />
                 <TocEntry title="Dad Mode Features" pageNumber="15, 16" className="text-sm" />
                 <TocEntry title="Quick Start Feature" pageNumber="5" className="text-sm" />
@@ -87,17 +80,7 @@ import TocEntry from '../components/TocEntry.astro';
               </div>
             </div>
 
-            <div class="pb-1">
-              <h3 class="text-base font-bold dark:text-white mb-2" style="font-family: 'Libre Baskerville', serif; font-style: italic;">Installation Instructions</h3>
-              <div class="space-y-1 text-sm pl-0" style="font-family: 'Libre Baskerville', serif;">
-                <TocEntry title="Before You Begin" pageNumber="19-21" className="text-sm" />
-                <TocEntry title="Team Integration" pageNumber="21-24" className="text-sm" />
-                <div class="dark:text-gray-300">
-                  <span>Setting Up Remote and</span>
-                </div>
-                <TocEntry title="Office Environments" pageNumber="25-28" className="text-sm ml-4" />
-              </div>
-            </div>
+            
 
             <div class="pb-1">
               <TocEntry 
@@ -119,7 +102,7 @@ import TocEntry from '../components/TocEntry.astro';
           </div>
 
           <!-- Model Info Section -->
-          <div class="mt-8 p-3 border border-black dark:border-white">
+          <!-- <div class="mt-8 p-3 border border-black dark:border-white">
             <p class="text-sm font-bold dark:text-white" style="font-family: 'Libre Baskerville', serif; font-style: italic;">Write the model and serial numbers here:</p>
             <div class="mt-3 space-y-2">
               <div class="flex items-center">
@@ -134,37 +117,9 @@ import TocEntry from '../components/TocEntry.astro';
             <p class="text-xs mt-3 dark:text-gray-300" style="font-family: 'Libre Baskerville', serif;">
               You can find them on the rear cover of the engineer LinkedIn profile.
             </p>
-          </div>
+          </div> -->
         </div>
 
-        <!-- Right Column - Large Logo -->
-        <div class="flex items-center justify-center">
-          <div class="relative">
-            <!-- Large circular logo background with concentric circles -->
-            <div class="relative w-80 h-80">
-              <!-- Outer circle -->
-              <div class="absolute inset-0 border-4 border-black dark:border-white rounded-full"></div>
-              <!-- Inner circles -->
-              <div class="absolute inset-4 border-2 border-black dark:border-white rounded-full"></div>
-              <div class="absolute inset-8 border-2 border-black dark:border-white rounded-full"></div>
-              
-              <!-- Cursive DL monogram -->
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-8xl dark:text-white opacity-80" style="font-family: 'Dancing Script', cursive; font-weight: 700;">
-                  DL
-                </div>
-              </div>
-            </div>
-            
-            <!-- Bottom serial numbers -->
-            <div class="absolute -bottom-6 left-0 right-0 text-center">
-              <p class="text-xs dark:text-gray-600" style="font-family: 'Libre Baskerville', serif;">
-                382BEA30234 &nbsp;&nbsp; 175D1807P415 &nbsp;&nbsp; 49-90151 &nbsp;&nbsp; 03-03-JR
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Container>
-  </div>
+
+  </Container>
 </BaseLayout>
