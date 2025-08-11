@@ -192,3 +192,59 @@ The work experience timeline (Timeline.astro component) currently displays highl
 - Improves scanability for recruiters/clients
 - Creates consistent structure across all timeline entries
 - Maintains professional appearance while enhancing readability
+
+## CSS Dot Leaders Implementation
+
+Implemented professional table of contents dot leaders for the Personal User Manual page (`/user-manual`). This technique creates authentic manual-style navigation with dots connecting section titles to page numbers.
+
+### Final Working Solution
+
+After multiple iterations, the successful approach uses:
+
+1. **HTML Structure**: Three-span layout with explicit dot container
+   ```html
+   <div class="toc-entry">
+     <span>Section Title</span>
+     <span class="toc-dots"></span>
+     <span>Page Number</span>
+   </div>
+   ```
+
+2. **CSS Implementation**: Flexbox with dotted border
+   ```css
+   .toc-entry {
+     display: flex;
+     align-items: baseline;
+     white-space: nowrap;
+   }
+   .toc-dots {
+     flex-grow: 1;
+     border-bottom: 2px dotted currentColor;
+     height: 0;
+     margin: 0 0.5rem;
+     margin-bottom: 0.2em;
+   }
+   ```
+
+### Key Technical Insights
+
+- **CSS Pseudo-elements** (`::before`, `::after`) appear at the end of flex containers, making it difficult to place dots between title and page number
+- **Flexbox Ordering** works but adds complexity and maintenance burden
+- **Explicit HTML Element** (`.toc-dots` span) provides the most reliable control over visual positioning
+- **`border-bottom: dotted`** with `flex-grow: 1` dynamically fills available space with perfectly spaced dots
+- **`white-space: nowrap`** prevents line wrapping for consistent table appearance
+
+### Previous Attempts (for reference)
+
+1. **Radial Gradient Background**: Complex but inconsistent dot rendering across browsers
+2. **Repeated Text Characters**: Simple but required overflow management and character spacing tuning
+3. **Flexbox Ordering with Pseudo-elements**: Worked but created maintenance complexity
+
+### Blog Article Potential
+
+This implementation showcases several advanced CSS concepts:
+- Flexbox layout strategies for complex text alignment
+- CSS pseudo-elements and their limitations
+- Border styling as a creative alternative to background patterns
+- Progressive enhancement from simple to sophisticated approaches
+- Real-world problem solving with multiple solution iterations

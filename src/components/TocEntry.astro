@@ -1,0 +1,39 @@
+---
+export interface Props {
+  title: string;
+  pageNumber: string;
+  bold?: boolean;
+  italic?: boolean;
+  className?: string;
+}
+
+const { title, pageNumber, bold = false, italic = false, className = '' } = Astro.props;
+
+// Determine font styling
+const fontWeight = bold ? 'font-bold' : 'font-normal';
+const fontStyle = italic ? 'italic' : '';
+const baseClasses = `toc-entry dark:text-gray-300 ${fontWeight} ${className}`;
+const titleClasses = italic ? 'font-style: italic;' : '';
+---
+
+<style>
+  .toc-entry {
+    display: flex;
+    align-items: baseline;
+    white-space: nowrap;
+  }
+  .toc-dots {
+    flex-grow: 1;
+    border-bottom: 3px dotted currentColor;
+    height: 0;
+    margin: 0 0.5rem;
+    margin-bottom: 0.2em;
+    letter-spacing: 0.5em;
+  }
+</style>
+
+<div class={baseClasses} style={`font-family: 'Libre Baskerville', serif;${titleClasses ? ` ${titleClasses}` : ''}`}>
+  <span>{title}</span>
+  <span class="toc-dots"></span>
+  <span>{pageNumber}</span>
+</div>
