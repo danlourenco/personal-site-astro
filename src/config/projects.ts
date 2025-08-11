@@ -2,6 +2,8 @@ import type { ImageMetadata } from 'astro';
 import momaScreenshot from '../images/projects/moma.jpg';
 import blueskyGuideScreenshot from '../images/projects/bsky-guide.png';
 import personalSiteScreenshot from '../images/projects/personal-site.png';
+import weatherScreenshot from '../images/projects/weather.png';
+
 export interface Project {
   id: string;
   title: string;
@@ -33,6 +35,16 @@ export const projects: Project[] = [
     linkType: 'website',
     screenshot: blueskyGuideScreenshot,
     technologies: ['Vue 3', 'Nuxt 3', 'ATProtocol', 'TypeScript', 'CSS3']
+  },
+  {
+    id: 'retro-weather',
+    title: 'Retro Weather',
+    description: 'Recreating The Weather Channel\'s retro interface using modern web technologies.',
+    href: 'https://b5057a0d.svelte-weather-8qu.pages.dev/',
+    linkText: 'b5057a0d.svelte-weather-8qu.pages.dev',
+    linkType: 'website',
+    screenshot: weatherScreenshot,
+    technologies: ['SvelteKit', 'Tailwind CSS v4',  'Cloudflare', 'Claude Code', 'Weather.gov API' ]
   },
    {
     id: 'personal-site-astro',
