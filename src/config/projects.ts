@@ -1,4 +1,5 @@
 import type { ImageMetadata } from 'astro';
+import ikeaOrSigurRosScreenshot from '../images/projects/ikea-or-sigur-ros.png';
 import momaScreenshot from '../images/projects/moma.jpg';
 import blueskyGuideScreenshot from '../images/projects/bsky-guide.png';
 import personalSiteScreenshot from '../images/projects/personal-site.png';
@@ -16,6 +17,16 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 'ikea-or-sigur-ros',
+    title: 'IKEA or Sigur Rós?',
+    description: 'A fun, interactive web quiz that challenges players to distinguish between IKEA product names and Sigur Rós song titles. Exploring AI-assisted vs. human coding methodologies.',
+    href: 'https://ikea-or-sigur-ros.danlourenco.workers.dev/',
+    linkText: 'ikea-or-sigur-ros.danlourenco.workers.dev',
+    linkType: 'website',
+    screenshot: ikeaOrSigurRosScreenshot,
+    technologies: ['SvelteKit', 'TailwindCSS', 'Howler.js', 'Cloudflare Workers', 'Vitest', 'Playwright']
+  },
   {
     id: 'moma',
     title: 'MoMA',
